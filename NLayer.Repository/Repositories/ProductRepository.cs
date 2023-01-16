@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NLayer.Core.Models;
 using NLayer.Core.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NLayer.Repository.Repositories
 {
@@ -19,7 +14,7 @@ namespace NLayer.Repository.Repositories
         {
             //Include emtodyla birlikte Eager Loading yapıldı
             //Eğer baştan değil de ihtiyaç olduğunda çekseydik lazy loading olurdu
-            return await _context.Products.Include(x=>x.Category).ToListAsync();  //product ile bağlı olduğu kategoriyi de çekiyoruz
+            return await _context.Products.Include(x => x.Category).ToListAsync();  //product ile bağlı olduğu kategoriyi de çekiyoruz
         }
     }
 }
